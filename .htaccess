@@ -1,8 +1,5 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    <IfModule mod_negotiation.c>
-        Options -MultiViews
-    </IfModule>
 
     ##
     ## You may need to uncomment (remove #) the following line for some hosting environments,
@@ -14,15 +11,8 @@
     ##
     ## Uncomment following lines to force HTTPS.
     ##
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
-
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
-
-    RewriteCond %{HTTPS} off
-    RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+    # RewriteCond %{HTTPS} off
+    # RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 
     RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
     RewriteRule ^(.*) - [E=BASE:%1]
