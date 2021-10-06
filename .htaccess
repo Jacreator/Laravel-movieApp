@@ -1,5 +1,8 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    <IfModule dir_module>
+        DirectoryIndex index.html index.php
+    </IfModule>
 
     ##
     ## You may need to uncomment (remove #) the following line for some hosting environments,
